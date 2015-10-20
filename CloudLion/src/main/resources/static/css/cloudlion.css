@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	color: black;
+}
+body {
+	background-image: url(../img/ptrbackground.jpg);
+	margin-top: 0;
+	background-position: cover;
+
+}
+header{
+	background-color: #f5f5f5;
+	font-size: 35px;
+	width: 90%;
+	padding-left: 10%;
+	box-shadow: 5px 5px 5px #000033;
+	font-family: Verdana;
+	}
+
+header span {
+	margin-top: 15px;
+	font-size: 20px; 
+}
+header a {
+	text-decoration: none;
+}
+.lion {
+	background-image: url(../img/lion.png);
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+.lion:visited {
+	color: black;
+}
+
+.right {
+	float: right;
+	text-decoration: none;
+}
+
+#login{
+	background-color: #f5f5f5;
+	float:right;
+	margin-top: 10%;
+	margin-right:75px;
+	padding: 10px;
+	box-shadow: 5px 5px 5px #000033;
+	
+}
+
+#signup{
+	float: left;
+	margin: 15px;
+	padding: 15px 1000px 100px 15px;
+	background-color: #f5f5f5;
+	box-shadow: 5px 5px 5px #000033;
+}
+
+#editor {
+	margin-top: 45px;
+	margin-left: 10%;
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#option {
+	background-color:black;
+	margin-right: 60%;
+	padding-bottom:100%;
+	padding-right: 30px;
+	margin-left: -90px;
+	float: left;
+}
+label {
+	display:block;
+	float: left;
+	text-align: right;
+	padding-right: 20px;
+	font-weight: bold;
+	
+}
+input {
+	display:block;
+	margin-top: 5px;
+}
+
+a:hover{
+	font-weight: bold;
+}
