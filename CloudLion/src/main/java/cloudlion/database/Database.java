@@ -1,26 +1,17 @@
-package cloudlion.controllers;
+package cloudlion.database;
 
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import cloudlion.CloudLionApplication;
 
-@SpringBootApplication
-public class Application implements CommandLineRunner {
+public class Database implements CommandLineRunner {
 
-    private static final Logger log = LoggerFactory.getLogger(Application.class);
-
-    public static void main(String args[]) {
-        SpringApplication.run(Application.class, args);
-    }
+    private static final Logger log = LoggerFactory.getLogger(CloudLionApplication.class);
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -28,8 +19,9 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
 
+    	/*
         log.info("Creating tables");
-
+	
         jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
         jdbcTemplate.execute("CREATE TABLE customers(" +
                 "id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
@@ -51,5 +43,6 @@ public class Application implements CommandLineRunner {
  //               "SELECT id, first_name, last_name FROM customers WHERE first_name = ?", new Object[] { "Josh" },
  //               (rs, rowNum) -> new User(rs.getLong("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("user_name"))
  //       ).forEach(user -> log.info(user.toString()));
+    	 */
     }
 }

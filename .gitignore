@@ -38,3 +38,4 @@ overridedb.*
 *.jar
 .DS_Store
 .factorypath
+derby.log
