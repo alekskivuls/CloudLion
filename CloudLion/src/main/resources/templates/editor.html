@@ -5,32 +5,56 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="css/cloudlion.css" />
 <link rel="icon" href="lion.png" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="css/terminal.css" />
 <script src="webjars/jquery/2.1.4/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
 </head>
+
+
 <body>
 	<header id="header"></header>
-	<div id="option">
-		<div>
-			<h3>Pick a Theme</h3>
-			<select id="theme">
-			</select>
+	<div id="main">
+		<div id="option">
+			<div>
+				<h3>Pick a Theme</h3>
+				<select id="theme">
+				</select>
+			</div>
+			<div>
+				<h3>Pick a Language</h3>
+				<select id="lang">
+				</select>
+			</div>
+			<div>
+				<h3>Select Font Size</h3>
+				<select id="font">
+				</select>
+			</div>
 		</div>
-		<div>
-			<h3>Pick a Language</h3>
-			<select id="lang">
-			</select>
-		</div>
-		<div>
-			<h3>Select Font Size</h3>
-			<select id="font">
-			</select>
+		<div id="container">
+			<div id="editor">function foo(items) { var x = "All this is
+				syntax highlighted"; return x; }</div>
+			<div id="terminal" ng-app="execute" ng-controller="console">
+				<terminal terminal-class="black">
+				<p class="click-me">Click me to start commanding !</p>
+				</terminal>
+			</div>
 		</div>
 	</div>
-	<div id="editor">function foo(items) { var x = "All this is
-		syntax highlighted"; return x; }</div>
+
+
+
 	<script src="webjars/ace/1.2.0/src-min-noconflict/ace.js"
 		type="text/javascript" charset="utf-8"></script>
+	<script src="js/terminal/terminal.js"></script>
+	<script src="js/terminal/filesystem.js"></script>
+	<script src="js/terminal/implementations.js"></script>
+	<script src="js/terminal/tools.js"></script>
+	<script src="js/terminal/execute.js"></script>
 	<script src="js/theme.js"></script>
 	<script src="js/header.js"></script>
 </body>
+
+
 </html>

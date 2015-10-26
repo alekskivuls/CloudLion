@@ -1,5 +1,6 @@
 * {
 	margin: 0;
+	overflow: hidden;
 }
 
 body {
@@ -58,15 +59,14 @@ header a {
 	box-shadow: 5px 5px 5px #000033;
 }
 
-#editor {
-	margin-top: 45px;
+#container {
 	margin-left: 10%;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 }
+#editor {
+	position: relative !important;
+	padding: 240px;
+}
+
 
 #option {
 	float: left;
