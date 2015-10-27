@@ -2,13 +2,14 @@ package cloudlion.database;
 
 public class User {
     private long id;
-    private String firstName, lastName, userName;
+    private String firstName, lastName, userName, password;
 
-    public User(long id, String firstName, String lastName, String userName) {
+    public User(long id, String firstName, String lastName, String userName, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
+        this.setPassword(password);
     }
 
     @Override
@@ -48,6 +49,14 @@ public class User {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
     
 }
