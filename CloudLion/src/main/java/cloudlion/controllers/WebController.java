@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class WebController {
-    @RequestMapping(value={"/", "index"})
+    @RequestMapping(value={"/", "home"})
     String index(){
-        return "index";
+        return "login";
     }
     
     @RequestMapping("editor")
@@ -18,5 +18,10 @@ public class WebController {
     @RequestMapping("signup")
     String signUp(){
         return "signup";
+    }
+    
+    @RequestMapping("login")
+    String login(){
+        return "login";
     }
 }

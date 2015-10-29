@@ -11,11 +11,13 @@
       <header id = "header"></header>
       <div id="login">
          <h3>Please Login</h3>
+         <form th:action="@{/login}" method="post">
          <label for="userName"></label>
-         <input type="text" name="userName" id="userName" required="required" placeholder="Pick a username"/><br/>
+         <input type="text" name="username" id="userName" required="required" placeholder="Username"/><br/>
          <label for="myPassword"></label>
-         <input type="password" name="myPassword" id="myPassword" placeholder="Create a password"/><br/>
+         <input type="password" name="password" id="myPassword" placeholder="Password"/><br/>
          <input type="Submit" value="Login"/>
+         </form>
       </div>
       <script src="js/header.js"></script>
    </body>
