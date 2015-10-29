@@ -33,7 +33,6 @@ public class UserRepository {
 		public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 			User user = new User(rs.getLong("id"), rs.getString("firstName"), rs.getString("lastName"),
 					rs.getString("userName"), rs.getString("password"));
-			// user.alias = rs.getString("alias");
 			return user;
 		}
 	};
