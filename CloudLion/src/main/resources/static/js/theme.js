@@ -1,6 +1,11 @@
 $('#theme').load('html/themeOption.html');
 $('#lang').load('html/langOption.html');
 $('#font').load('html/fontOption.html');
+
+var editor = ace.edit("editor"); // initializes text editor
+editor.setTheme("ace/theme/katzenmilch"); // default theme
+editor.session.setMode("ace/mode/javascript"); // default language
+
 function setTheme() {
 	var value = document.getElementById("theme").value;
 	var dir = "ace/theme/";
@@ -23,6 +28,3 @@ function setFont() {
 	document.getElementById('editor').style.fontSize = value;
 	//	alert(value);
 }
-var editor = ace.edit("editor"); // initializes text editor
-editor.setTheme("ace/theme/katzenmilch"); // default theme
-editor.session.setMode("ace/mode/javascript"); // default language

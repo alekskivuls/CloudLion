@@ -60,7 +60,7 @@ header a {
 
 #editor {
 	margin-top: 45px;
-	margin-left: 10%;
+	margin-left: 15%;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -73,6 +73,14 @@ header a {
 }
 
 #option div {
+	padding: 10px;
+}
+
+#button {
+	float: left;
+}
+
+#button div {
 	padding: 10px;
 }
 
