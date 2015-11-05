@@ -1,40 +1,74 @@
 package cloudlion.controllers;
 
+import cloudlion.domain.UserCreateForm;
+import cloudlion.domain.validator.UserCreateFormValidator;
+import cloudlion.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-import cloudlion.database.User;
-import cloudlion.database.UserRepository;
+import javax.validation.Valid;
+import java.util.NoSuchElementException;
 
-import java.util.List;
-
-@RestController
-@RequestMapping("user")
+@Controller
 public class UserController {
-    protected final Logger log = LoggerFactory.getLogger(getClass());
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+    private final UserService userService;
+    private final UserCreateFormValidator userCreateFormValidator;
 
     @Autowired
-    private UserRepository users;
-
-    @RequestMapping("test")
-    public String test() {
-        log.info("Test");
-        return "OK";
+    public UserController(UserService userService, UserCreateFormValidator userCreateFormValidator) {
+        this.userService = userService;
+        this.userCreateFormValidator = userCreateFormValidator;
     }
 
-    @RequestMapping("user")
-    public User getUser(@RequestParam("id") long id) {
-        log.info("Get user");
-        return users.getUser(id);
+    @InitBinder("form")
+    public void initBinder(WebDataBinder binder) {
+        binder.addValidators(userCreateFormValidator);
     }
 
-    @RequestMapping("users")
-    public List<User> getUsers(@RequestParam("ids") long[] ids) {
-        log.info("Get users");
-        return users.getUsers(ids);
+    @PreAuthorize("@currentUserServiceImpl.canAccessUser(principal, #id)")
+    @RequestMapping("/user/{id}")
+    public ModelAndView getUserPage(@PathVariable Long id) {
+        LOGGER.debug("Getting user page for user={}", id);
+        return new ModelAndView("user", "user", userService.getUserById(id)
+                .orElseThrow(() -> new NoSuchElementException(String.format("User=%s not found", id))));
     }
-} 
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @RequestMapping(value = "/user/create", method = RequestMethod.GET)
+    public ModelAndView getUserCreatePage() {
+        LOGGER.debug("Getting user create form");
+        return new ModelAndView("user_create", "form", new UserCreateForm());
+    }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @RequestMapping(value = "/user/create", method = RequestMethod.POST)
+    public String handleUserCreateForm(@Valid @ModelAttribute("form") UserCreateForm form, BindingResult bindingResult) {
+        LOGGER.debug("Processing user create form={}, bindingResult={}", form, bindingResult);
+        if (bindingResult.hasErrors()) {
+            // failed validation
+            return "user_create";
+        }
+        try {
+            userService.create(form);
+        } catch (DataIntegrityViolationException e) {
+            // probably email already exists - very rare case when multiple admins are adding same user
+            // at the same time and form validation has passed for more than one of them.
+            LOGGER.warn("Exception occurred when trying to save the user, assuming duplicate email", e);
+            bindingResult.reject("email.exists", "Email already exists");
+            return "user_create";
+        }
+        // ok, redirect
+        return "redirect:/users";
+    }
+
+}
