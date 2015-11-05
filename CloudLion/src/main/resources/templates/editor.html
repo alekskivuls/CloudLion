@@ -6,16 +6,35 @@
 <link rel="stylesheet" type="text/css" href="css/cloudlion.css" />
 <link rel="icon" href="lion.png" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="css/terminal.css" />
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
 <script src="webjars/jquery/2.1.4/jquery.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
+<script src="webjars/angularjs/1.4.7/angular.js"></script>
+
 </head>
 
 
 <body>
-	<header id="header"></header>
-	<div id="main">
-		<div id="option">
+
+	<!-- HEADER -->
+	<nav id="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">CloudLion</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index">Home</a></li>
+					<li><a href="editor">Editor</a></li>
+					<li><a href="signup">Sign Up</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div class="row" id="main">
+		<div class="col-md-2 sidebar" id="option">
 			<div>
 				<h3>Pick a Theme</h3>
 				<select id="theme">
@@ -32,17 +51,20 @@
 				</select>
 			</div>
 		</div>
-		<div id="container">
-			<div id="editor">function foo(items) { var x = "All this is
-				syntax highlighted"; return x; }</div>
-			<div id="terminal" ng-app="execute" ng-controller="console">
-				<terminal terminal-class="black">
-				<p class="click-me">Click me to start commanding !</p>
-				</terminal>
+		<div class="col-md-10" id="rightCol">
+			<div class="row" id="editor">
+				<div>function foo(items) { var x = "All this is syntax
+					highlighted"; return x; }</div>
+			</div>
+			<div class="row" id="terminal">
+				<div ng-app="execute" ng-controller="console">
+					<terminal terminal-class="black">
+					<p class="click-me">Click me to start commanding !</p>
+					</terminal>
+				</div>
 			</div>
 		</div>
 	</div>
-
 
 
 	<script src="webjars/ace/1.2.0/src-min-noconflict/ace.js"
@@ -54,6 +76,8 @@
 	<script src="js/terminal/execute.js"></script>
 	<script src="js/theme.js"></script>
 	<script src="js/header.js"></script>
+	<script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </body>
 
 

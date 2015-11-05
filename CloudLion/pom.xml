@@ -63,6 +63,14 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 			<version>1.2.5.RELEASE</version>
 		</dependency>
+		<dependency>
+    <groupId>org.webjars</groupId>
+    	<artifactId>angularjs</artifactId>
+    	<version>1.4.7</version>
+	</dependency>
+		
+		
+		
 	</dependencies>
 
 	<build>
