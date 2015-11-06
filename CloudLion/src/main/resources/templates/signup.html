@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-   <head lang="en">
-      <title>Sign Up</title>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <link rel="stylesheet" type="text/css" href="css/cloudlion.css" />
-      <link rel="icon" href="lion.png" type="image/x-icon" />
-      <script src="webjars/jquery/2.1.4/jquery.min.js"></script>
-   </head>
-   <body>
-      <header id = "header"></header>
-      <div id="signup">
-         <h3>Create your personal account</h3>
-         <br/>
-         <form>
-            <label for="userName">Username </label><br/>
-            <input type="text" name="userName" id="userName" required="required" placeholder="Pick a username"/><br/>
-            <label for="myEmail">Email </label><br/>
-            <input type="email" name="myEmail" id="myEmail" required="required" placeholder="Your email"/><br/>
-            <label for="myPassword">Password </label><br/>
-            <input type="password" name="myPassword" id="myPassword" placeholder="Create a password"/><br/>
-            <input type="Submit" value="Sign Up"/>
-         </form>
-      </div>
-       <script src="js/header.js"></script>
-   </body>
+<head lang="en">
+<title>Editor</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="icon" href="lion.png" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/cloudlion.css" />
+<script src="webjars/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<nav id="navbar navbar-default navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href ="index.html" class="navbar-brand">CloudLion</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href ="index">Home</a></li>
+					<li><a href ="editor">Editor</a></li>
+					<li><a href ="signup">Sign Up</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="jumbotron">
+		 <div id="signup" class="container">
+		 <h3>Create your personal account</h3>
+		 <br/>
+	 		<form id="signup" class="form-horizontal" role="form">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="user">Username:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="user" placeholder="Enter username"></input>
+					</div>
+				</div>
+	 	   <div class="form-group">
+	 	     <label class="control-label col-sm-2" for="email">Email:</label>
+	 	     <div class="col-sm-10">
+	 	       <input type="email" class="form-control" id="email" placeholder="Enter email"></input>
+	 	     </div>
+	 	   </div>
+	 	   <div class="form-group">
+	 	     <label class="control-label col-sm-2" for="pwd">Password:</label>
+	 	     <div class="col-sm-10">
+	 	       <input type="password" class="form-control" id="pwd" placeholder="Enter password"></input>
+	 	     </div>
+	 	   </div>
+	 	   <div class="form-group">
+	 	     <div class="col-sm-offset-2 col-sm-10">
+	 	       <div class="checkbox">
+	 	         <label><input type="checkbox"> Remember me</input></label>
+	 	       </div>
+	 	     </div>
+	 	   </div>
+	 	   <div class="form-group">
+	 	     <div class="col-sm-offset-2 col-sm-10">
+	 	       <button type="submit" class="btn btn-default">Submit</button>
+	 	     </div>
+	 	   </div>
+	 	 </form>
+	</div>
+	</div>
+<script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+
 </html>

@@ -1,44 +1,20 @@
 * {
 	margin: 0;
+	overflow: hidden;
 }
 
 body {
 	background-image: url(../img/ptrbackground.jpg);
 	margin-top: 0;
 	background-position: cover;
+	background-repeat: repeat-x;
+	background-color: #00569F;
 }
 
-header {
+nav {
 	background-color: #f5f5f5;
-	font-size: 35px;
-	width: 90%;
-	padding-left: 10%;
 	box-shadow: 5px 5px 5px #000033;
 	font-family: Verdana;
-}
-
-header span {
-	margin-top: 15px;
-	font-size: 20px;
-}
-
-header a {
-	text-decoration: none;
-}
-
-.lion {
-	background-image: url(../img/lion.png);
-	background-repeat: no-repeat;
-	background-position: left;
-}
-
-.lion:visited {
-	color: black;
-}
-
-.right {
-	float: right;
-	text-decoration: none;
 }
 
 #login {
@@ -50,30 +26,56 @@ header a {
 	box-shadow: 5px 5px 5px #000033;
 }
 
-#signup {
-	float: left;
-	margin: 15px;
-	padding: 15px 1000px 100px 15px;
-	background-color: #f5f5f5;
-	box-shadow: 5px 5px 5px #000033;
+#login h3{
+	padding-bottom: 5px;
+	box-shadow: 0px 1px 0px 0px #000033;
+}
+#signup h3{
+		padding-bottom: 5px;
+		box-shadow: 0px 1px 0px 0px #000033;
 }
 
-#editor {
-	margin-top: 45px;
-	margin-left: 10%;
-	position: absolute;
-	top: 0;
+#main {
+
+	height: 100%;
+	position: fixed;
+	left:0;
 	right: 0;
+}
+.sidebar {
+	position: fixed;
 	bottom: 0;
+	height: 100%;
 	left: 0;
 }
 
-#option {
-	float: left;
+
+#terminal {
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+
+}
+.terminal-line {
+	background-color: black;
+	color: white;
+	padding: 0;
+	margin: 0px;
+	border: 0;
 }
 
+#editor {
+	position: fixed;
+	bottom: 250px;
+	top: 50px;
+	width: 100%;
+}
 #option div {
 	padding: 10px;
+}
+
+#option h3 {
+	font-size: 1.2em;
 }
 
 label {
