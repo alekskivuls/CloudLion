@@ -5,22 +5,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cloudlion.compiler.javaCompiler;
+import cloudlion.compiler.JavaCompiler;
 
 @RestController
-@RequestMapping("javaCompiler")
-public class CompilerController
-{
-	
+public class CompilerController {
 	@Autowired
-	private javaCompiler compiler;
+	private JavaCompiler compiler;
+
 	
+	//Request with /compiler?filename=file.extension
 	@RequestMapping("compiler")
-	public void compile(@RequestParam("filename") String filename)
-	{
+	public void compile(@RequestParam(value = "filename") String filename) {
 		compiler.compile(filename);
 	}
-	
+
 }
-
-
