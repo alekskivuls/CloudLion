@@ -6,8 +6,8 @@ For software developers on the move and for groups that need uniform workspaces,
 ### Development Setup ###
 Clone the repository locally.
 Download Spring Tool Suite https://spring.io/tools
-Run Spring Tool Suite and select a workspace.
-Once in eclipse, go to File > Import > Maven > Existing Maven Projects
+. Run Spring Tool Suite and select a workspace.
+Once in eclipse, go to File > Import > Maven > Existing Maven Projects.
 Click next. Click browse and go to local repository location.
 Then click advanced and enter the project name in the Name Template.
 Select pom.xml and click finish.
