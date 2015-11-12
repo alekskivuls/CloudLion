@@ -65,7 +65,7 @@
 				syntax highlighted"; return x; }</div>
 			</div>
 			<div class="row" id="terminal">
-			<div ng-app="execute" ng-controller="console">
+			<div ng-app="terminalServer" ng-controller="mainController" ng-init="createConsole('cmd.exe')">
 				<terminal terminal-class="black">
 				<p class="click-me">Click me to start commanding !</p>
 				</terminal>
@@ -82,6 +82,7 @@
 	<script src="js/terminal/implementations.js"></script>
 	<script src="js/terminal/tools.js"></script>
 	<script src="js/terminal/execute.js"></script>
+	<script src="js/terminal/app.js"></script>
 	<script src="js/theme.js"></script>
 	<script src="js/header.js"></script>
 	<script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
