@@ -32,8 +32,7 @@
 	</nav>
 
 
-
-	<div class="row" id="main">
+<div class="row" id="main">
 		<div class="col-md-2 sidebar" id="option">
 			<div>
 				<h3>Pick a Theme</h3>
@@ -50,19 +49,28 @@
 				<select id="font" onchange="setFont()">
 				</select>
 			</div>
+			<div>
+				<h3>Options</h3>
+				<select id="file" onchange="setFile()">
+				</select>
+			</div>
+			<div>
+				<button type="button" onclick="showContent()">Show Content</button>
+			</div>
+			
 		</div>
 		<div class="col-md-10" id="rightCol">
 			<div class="row" id="editor">
-				<div>function foo(items) { var x = "All this is syntax
-					highlighted"; return x; }</div>
+			<div id="textContent">function foo(items) { var x = "All this is
+				syntax highlighted"; return x; }</div>
 			</div>
 			<div class="row" id="terminal">
-				<div ng-app="execute" ng-controller="console">
-					<terminal terminal-class="black">
-					<p class="click-me">Click me to start commanding !</p>
-					</terminal>
-				</div>
+			<div ng-app="execute" ng-controller="console">
+				<terminal terminal-class="black">
+				<p class="click-me">Click me to start commanding !</p>
+				</terminal>
 			</div>
+		</div>
 		</div>
 	</div>
 
