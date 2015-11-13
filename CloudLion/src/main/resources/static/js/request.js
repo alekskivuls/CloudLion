@@ -11,19 +11,20 @@ $('#compiler').load('html/compiler.html');
 
 function compileCode() 
 {
-	var value = document.getElementById("compiler").value;
+	//var value = document.getElementById("compiler").value;
 	var editor = ace.edit("editor");
 	
 	var langValue = document.getElementById("lang").value;
 	
 	var Code = editor.getValue();	
-
-
-		$(function(){
-			$.ajax({
-				url: "java/javacompiler.java",
-				type: 'GET',
-				data: {'code': Code, 'langValue': langValue}
-				});
-		});
+	//alert(Code);
+	
+	$(function(){
+		$.ajax({
+			url: "editor.html",
+			type: 'GET',
+			data: {'code': Code}//, 'langValue': langValue}
+			});
+	});
+	
 }
