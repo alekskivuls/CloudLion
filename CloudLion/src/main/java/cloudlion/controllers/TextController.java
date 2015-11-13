@@ -9,15 +9,9 @@ import cloudlion.texteditor.TextEditor;
 @RestController
 @RequestMapping("TextEditor")
 public class TextController {
-	
-	@Autowired
-	private TextEditor texteditor;
-	
-	@RequestMapping("texteditor")
-	public static void main(String[] args) {
+
+	public static void main(String[] args){
 		new TextEditor();
 	}
-	
-	
 
 }

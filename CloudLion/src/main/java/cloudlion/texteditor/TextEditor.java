@@ -27,10 +27,10 @@ import javax.swing.event.DocumentListener;
 
 public class TextEditor extends JFrame implements ActionListener, DocumentListener {
 
-/*	public static void main(String[] args) {
+	public static void main(String[] args) {
 		new TextEditor();
 	}
-*/
+
 	public JEditorPane textPane;
 	private JMenuBar menu;
 	public boolean changed = false;
