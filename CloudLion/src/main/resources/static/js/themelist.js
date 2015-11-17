@@ -1,101 +1,51 @@
-/* ***** BEGIN LICENSE BLOCK *****
- * Distributed under the BSD license:
- *
- * Copyright (c) 2013 Matthew Christopher Kastor-Inare III, Atropa Inc. Intl
- * All rights reserved.
- *
- * Contributed to Ajax.org under the BSD license.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution.
- *     * Neither the name of Ajax.org B.V. nor the
- *       names of its contributors may be used to endorse or promote products
- *       derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL AJAX.ORG B.V. BE LIABLE FOR ANY
- * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
- * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * ***** END LICENSE BLOCK ***** */
+var themeData = document.getElementById("myDiv");
 
-
-/**
- * Generates a list of themes available when ace was built.
- * @fileOverview Generates a list of themes available when ace was built.
- * @author <a href="mailto:matthewkastor@gmail.com">
- *  Matthew Christopher Kastor-Inare III </a><br />
- *  ☭ Hial Atropa!! ☭
- */
-
-define(function(require, exports, module) {
-"use strict";
-require("ace/lib/fixoldbrowsers");
-
-var themeData = [
-    ["Chrome"         ],
-    ["Clouds"         ],
+//Create array of options to be added
+var array = [
+    ["Chrome"],
+    ["Clouds"],
     ["Crimson Editor" ],
-    ["Dawn"           ],
-    ["Dreamweaver"    ],
-    ["Eclipse"        ],
-    ["GitHub"         ],
-    ["IPlastic"       ],
+    ["Dawn"],
+    ["Dreamweaver"],
+    ["Eclipse"],
+    ["GitHub"],
+    ["IPlastic"],
     ["Solarized Light"],
-    ["TextMate"       ],
-    ["Tomorrow"       ],
-    ["XCode"          ],
+    ["TextMate"],
+    ["Tomorrow"],
+    ["XCode"],
     ["Kuroir"],
     ["KatzenMilch"],
-    ["SQL Server"           ,"sqlserver"               , "light"],
-    ["Ambiance"             ,"ambiance"                ,  "dark"],
-    ["Chaos"                ,"chaos"                   ,  "dark"],
-    ["Clouds Midnight"      ,"clouds_midnight"         ,  "dark"],
-    ["Cobalt"               ,"cobalt"                  ,  "dark"],
-    ["idle Fingers"         ,"idle_fingers"            ,  "dark"],
-    ["krTheme"              ,"kr_theme"                ,  "dark"],
-    ["Merbivore"            ,"merbivore"               ,  "dark"],
-    ["Merbivore Soft"       ,"merbivore_soft"          ,  "dark"],
-    ["Mono Industrial"      ,"mono_industrial"         ,  "dark"],
-    ["Monokai"              ,"monokai"                 ,  "dark"],
-    ["Pastel on dark"       ,"pastel_on_dark"          ,  "dark"],
-    ["Solarized Dark"       ,"solarized_dark"          ,  "dark"],
-    ["Terminal"             ,"terminal"                ,  "dark"],
-    ["Tomorrow Night"       ,"tomorrow_night"          ,  "dark"],
-    ["Tomorrow Night Blue"  ,"tomorrow_night_blue"     ,  "dark"],
-    ["Tomorrow Night Bright","tomorrow_night_bright"   ,  "dark"],
-    ["Tomorrow Night 80s"   ,"tomorrow_night_eighties" ,  "dark"],
-    ["Twilight"             ,"twilight"                ,  "dark"],
-    ["Vibrant Ink"          ,"vibrant_ink"             ,  "dark"]
+    ["sqlserver"],
+    ["ambiance"],
+    ["chaos"],
+    ["clouds_midnight"],
+    ["cobalt"],
+    ["idle_fingers"],
+    ["kr_theme"],
+    ["merbivore"],
+    ["merbivore_soft"],
+    ["mono_industrial"],
+    ["monokai"],
+    ["pastel_on_dark"],
+    ["solarized_dark"],
+    ["terminal"],
+    ["tomorrow_night"],
+    ["tomorrow_night_blue"],
+    ["tomorrow_night_bright"],
+    ["tomorrow_night_eighties"],
+    ["twilight"],
+    ["vibrant_ink"]
 ];
+//Create and append select list
+var selectList = document.createElement("select");
+selectList.setAttribute("id", "mySelect");
+myDiv.appendChild(selectList);
 
-
-exports.themesByName = {};
-
-/**
- * An array containing information about available themes.
- */
-exports.themes = themeData.map(function(data) {
-    var name = data[1] || data[0].replace(/ /g, "_").toLowerCase();
-    var theme = {
-        caption: data[0],
-        theme: "ace/theme/" + name,
-        isDark: data[2] == "dark",
-        name: name
-    };
-    exports.themesByName[name] = theme;
-    return theme;
-});
-
-});
+//Create and append the options
+for (var i = 0; i < array.length; i++) {
+    var option = document.createElement("option");
+    option.setAttribute("value", array[i]);
+    option.text = array[i];
+    selectList.appendChild(option);
+}

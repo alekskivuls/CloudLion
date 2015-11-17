@@ -1,15 +1,14 @@
-$('#thmlist').load('js/themelist.js');
+$('#theme').load('html/themeOption.html');
 $('#lang').load('html/langOption.html');
 $('#font').load('html/fontOption.html');
 $('#file').load('html/fileOption.html');
 function setTheme() {
-	var themelist = ace.require("thmlist") 
-	var theme = themelist.themesByName
+	var value = document.getElementById("theme").value;
 	var dir = "ace/theme/";
-	var newTheme = dir.concat(theme);
+	var newTheme = dir.concat(value);
 	var editor = ace.edit("editor");
 	editor.setTheme(newTheme);
-	//alert(value);
+	alert(value);
 }
 function setLang() {
 	var value = document.getElementById("lang").value;
