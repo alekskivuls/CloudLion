@@ -8,7 +8,7 @@ function setTheme() {
 	var newTheme = dir.concat(value);
 	var editor = ace.edit("editor");
 	editor.setTheme(newTheme);
-	alert(value);
+	//alert(value);
 }
 function setLang() {
 	var value = document.getElementById("lang").value;
