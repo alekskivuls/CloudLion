@@ -25,9 +25,4 @@ public class WebController {
     String signUp(){
         return "signup";
     }
-    
-    @RequestMapping("error")
-    String error(){
-        return "error";
-    }
 }
