@@ -30,10 +30,12 @@ public class CompilerController
 	
 	//Request with Compile button on editor.html
 	@RequestMapping("editor.html")
-	public void copyText(@RequestParam(value = "code") String Code)
+	public void copyText(@RequestParam(value = "code") String Code, @RequestParam(value = "lang") String lang)
 	{
 			System.out.print("code received \n");
-			compiler.getText(Code);
+			System.out.print(lang);
+			System.out.print("\n");
+			compiler.getText(Code, lang);
 	}
 
 

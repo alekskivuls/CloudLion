@@ -23,7 +23,7 @@ function compileCode()
 		$.ajax({
 			url: "editor.html",
 			type: 'GET',
-			data: {'code': Code}//, 'langValue': langValue}
+			data: {'code': Code, 'lang': langValue}
 			});
 	});
 	
