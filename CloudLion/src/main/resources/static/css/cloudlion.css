@@ -10,7 +10,9 @@ body {
 	background-repeat: repeat-x;
 	background-color: #00569F;
 }
-
+select {
+	margin-top: 1%;
+}
 nav {
 	background-color: #f5f5f5;
 	box-shadow: 5px 5px 5px #000033;
@@ -29,6 +31,9 @@ nav {
 #login h3{
 	padding-bottom: 5px;
 	box-shadow: 0px 1px 0px 0px #000033;
+}
+#signup {
+	height: 100vh;
 }
 #signup h3{
 		padding-bottom: 5px;

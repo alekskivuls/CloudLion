@@ -15,8 +15,19 @@ public class WebController {
         return "editor";
     }
     
+    @RequestMapping("setting")
+    String setting(){
+        return "setting";
+    }
+    
+   
     @RequestMapping("signup")
     String signUp(){
         return "signup";
+    }
+    
+    @RequestMapping("error")
+    String error(){
+        return "error";
     }
 }
