@@ -10,16 +10,9 @@ public class HomeController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 
-    @RequestMapping("/")
+    @RequestMapping(value={"/", "index"})
     public String getHomePage() {
         LOGGER.debug("Getting home page");
         return "signup";
     }
-    
-    @RequestMapping("/index")
-    public String getIndexPage() {
-        LOGGER.debug("Getting home page");
-        return "signup";
-    }
-
 }
