@@ -11,6 +11,15 @@ function setTheme() {
 	editor.setTheme(newTheme);
 	//alert(value);
 }
+//Mark To DO
+function setLionTheme() {
+	var value = document.getElementById("theme").value;
+	var dir = "ace/theme/";
+	var newTheme = dir.concat(value);
+	var editor = ace.edit("editor");
+	editor.setTheme(newTheme);
+	//alert(value);
+}
 function setLang() {
 	var value = document.getElementById("lang").value;
 	var dir = "ace/mode/";
