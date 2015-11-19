@@ -25,9 +25,10 @@ public class javaCompiler {
 	}
 
 	//Code string and language is passed by CompilerController.java
-	public void getText(String Code, String lang)
+	public void getText(String Code, String filename)
 	{
-		String gotLang = lang;
+		String gotLang = filename.substring(filename.lastIndexOf('.') + 1);
+		//String gotLang = lang;
 		switch (gotLang) 
 		{
 			case "java":
