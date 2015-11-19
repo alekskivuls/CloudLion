@@ -1,7 +1,7 @@
 $('#theme').load('html/themeOption.html');
 $('#lang').load('html/langOption.html');
 $('#font').load('html/fontOption.html');
-//$('#file').load('html/fileOption.html');
+$('#file').load('html/fileOption.html');
 function setTheme() {
 	var value = document.getElementById("theme").value;
 	var dir = "ace/theme/";
