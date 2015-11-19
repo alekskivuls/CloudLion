@@ -34,7 +34,7 @@
 
 
 <div class="row" id="main">
-		<div class="col-md-2 sidebar" id="option">
+		<div class="col-md-2 col-xs-2 sidebar" id="option">
 			<div>
 				<h3>Pick a Theme</h3>
 				<select id="theme" onchange="setTheme()">
@@ -64,24 +64,21 @@
 			<div>
 				<button type="button" onclick="showContent()">Show Content</button>
 			</div>
-			<div>
-			<button type="button" onclick="compileCode()">Compile</button>
-			</div>
 			
 		</div>
-		<div class="col-md-10" id="rightCol">
+		<div class="col-md-10 col-xs-10" id="rightCol">
 			<div class="row" id="editor">
 			<div id="textContent">function foo(items) { var x = "All this is
 				syntax highlighted"; return x; }</div>
 			</div>
 			<div class="row" id="terminal">
-			<div ng-app="terminalServer" ng-controller="mainController" ng-init="createConsole('cmd.exe')">
+			<div ng-app="execute" ng-controller="console">
 				<terminal terminal-class="black">
 				<p class="click-me">Click me to start commanding !</p>
 				</terminal>
 			</div>
 		</div>
-	</div>
+		</div>
 	</div>
 
 	<script src="webjars/ace/1.2.0/src-min-noconflict/ace.js"
