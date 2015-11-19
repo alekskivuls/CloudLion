@@ -17,7 +17,8 @@ function onFileChanged(theEvt) {
 	var totalBytes = 0;
 
 	if (thefile.type != "text/plain") {
-		document.getElementById('filecontents').innerHTML = "No text file chosen";
+		alert("Invaild file");
+		//document.getElementById('filecontents').innerHTML = "No text file chosen";
 		return;
 	}
 	var reader = new FileReader();
