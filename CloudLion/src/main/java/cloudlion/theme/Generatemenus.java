@@ -1,8 +1,8 @@
 package cloudlion.theme;
 
-
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -53,7 +53,7 @@ public class Generatemenus {
             for (int i = 0; i < array.length; i++) {
                 String generatedLine;
                 if (array[i][1] == null) {
-                    generatedLine = "<option value=\"" + array[i][0] + "\" name=\"theme\" onclick=\"setTheme()\">" + array[i][0] + "</option>";
+                    generatedLine = "<option value=\"" + array[i][0].toLowerCase() + "\" name=\"theme\" onclick=\"setTheme()\">" + array[i][0] + "</option>";
                     printWriter.println(generatedLine);
                 }
                 if (array[i][1] != null) {
