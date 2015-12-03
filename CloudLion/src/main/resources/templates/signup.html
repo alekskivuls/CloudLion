@@ -28,30 +28,31 @@
 		 <div id="signup" class="container">
 		 <h3>Create your personal account</h3>
 		 <br/>
-	 		<form id="signup" class="form-horizontal" role="form">
+	 		<form th:action="@{/user/create}" method="post" id="signup" class="form-horizontal" role="form">
+	 		<!--  
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="user">Username:</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="user" placeholder="Enter username"></input>
 					</div>
 				</div>
+				-->
 	 	   <div class="form-group">
 	 	     <label class="control-label col-sm-2" for="email">Email:</label>
 	 	     <div class="col-sm-10">
-	 	       <input type="email" class="form-control" id="email" placeholder="Enter email"></input>
+	 	       <input type="email" class="form-control" name="email" id="email" placeholder="Enter email"></input>
 	 	     </div>
 	 	   </div>
 	 	   <div class="form-group">
-	 	     <label class="control-label col-sm-2" for="pwd">Password:</label>
+	 	     <label class="control-label col-sm-2" for="password">Password:</label>
 	 	     <div class="col-sm-10">
-	 	       <input type="password" class="form-control" id="pwd" placeholder="Enter password"></input>
+	 	       <input type="password" class="form-control" name="password" id="password" placeholder="Enter password"></input>
 	 	     </div>
 	 	   </div>
 	 	   <div class="form-group">
-	 	     <div class="col-sm-offset-2 col-sm-10">
-	 	       <div class="checkbox">
-	 	         <label><input type="checkbox"> Remember me</input></label>
-	 	       </div>
+	 	     <label class="control-label col-sm-2" for="passwordRepeated">Password:</label>
+	 	     <div class="col-sm-10">
+	 	       <input type="password" class="form-control" name="passwordRepeated" id="passwordRepeated" placeholder="Enter password again"></input>
 	 	     </div>
 	 	   </div>
 	 	   <div class="form-group">
