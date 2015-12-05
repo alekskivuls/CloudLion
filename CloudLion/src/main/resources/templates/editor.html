@@ -62,16 +62,19 @@
 			</form>
 		</div>
 			<div>
-				<button type="button" onclick="showContent()">Show Content</button>
-			</div>
-			<div>
 			<button type="button" onclick="compileCode()">Compile</button>
 		</div>
+			<div>
+				<h3>Files </h3>
+				<button type="button" onclick="addFolder()">Add Folder</button>
+				<div id="folders">
+				</div>
+			</div>
+			
 		</div>
 		<div class="col-md-10 col-xs-10" id="rightCol">
 			<div class="row" id="editor">
-			<div id="textContent">function foo(items) { var x = "All this is
-				syntax highlighted"; return x; }</div>
+			<div id="textContent">******Make a new folder. This will not be saved.******</div>
 			</div>
 			<div class="row" id="terminal">
 			<div ng-app="execute" ng-controller="console">
