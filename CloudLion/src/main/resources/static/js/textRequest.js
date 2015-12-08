@@ -1,4 +1,7 @@
 $('#file').load('html/fileOption.html');
+$('#compiler').load('html/compiler.html');
+
+var fileName;
 
 function init() {
 	var bHaveFileAPI = (window.File && window.FileReader);
@@ -36,7 +39,7 @@ function setFile() {
 	var editor = ace.edit("editor");
 	var getFile = document.getElementById("file").value;
 	var Code = editor.getSession().getValue();
-	var fileName;
+	
 
 	if (getFile == "save") {
 		fileName = prompt('What do you want to name this file?');
@@ -61,4 +64,21 @@ function setFile() {
 			}
 		});
 	});
+}
+
+function compileCode() 
+{
+	//var value = document.getElementById("compiler").value;
+	var editor = ace.edit("editor");
+	var Code = editor.getValue();	
+	//alert(Code);
+	
+	$(function(){
+		$.ajax({
+			url: "compiler.html",
+			type: 'GET',
+			data: {'code': Code, 'filename': fileName}
+			});
+	});
+	
 }
