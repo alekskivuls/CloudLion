@@ -1,15 +1,10 @@
 package cloudlion.compiler;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
-
-import javax.tools.JavaCompiler;
-import javax.tools.ToolProvider;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import org.springframework.stereotype.Service;
 
@@ -57,6 +52,9 @@ public class Compiler {
 			//http://stackoverflow.com/questions/15356405/how-to-run-a-command-at-terminal-from-java-program
 			String[] procArgs = new String[] {"cmd", "/K", "javac", ".\\" + classname + ".java"};
 			Process compilerProcess = new ProcessBuilder(procArgs).start();
+
+			procArgs = new String[] {"cmd", "/K", "java", classname};
+			Process executeProcess = new ProcessBuilder(procArgs).inheritIO().start();
 			System.out.print(".java file successfully compiled. \n");
 			} 
 			catch (Exception e) 
