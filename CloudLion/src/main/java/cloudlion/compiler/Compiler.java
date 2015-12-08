@@ -14,7 +14,7 @@ import javax.tools.ToolProvider;
 import org.springframework.stereotype.Service;
 
 @Service
-public class javaCompiler {
+public class Compiler {
 
 	String classname = "";
 	String extension = "";
@@ -22,7 +22,7 @@ public class javaCompiler {
 	String Code;
 	int exitCode;
 
-	public javaCompiler() {
+	public Compiler() {
 	}
 
 	public void compile(String Code, String fileName) 

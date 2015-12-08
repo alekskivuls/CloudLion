@@ -35,22 +35,6 @@ public class UserController {
 		binder.addValidators(userCreateFormValidator);
 	}
 
-	@PreAuthorize("@currentUserServiceImpl.canAccessUser(principal, #id)")
-	@RequestMapping("/user/{id}")
-	public ModelAndView getUserPage(@PathVariable Long id) {
-		LOGGER.debug("Getting user page for user={}", id);
-		return new ModelAndView("user", "user", userService.getUserById(id)
-				.orElseThrow(() -> new NoSuchElementException(String.format("User=%s not found", id))));
-	}
-
-	@PreAuthorize("hasAuthority('ADMIN')")
-	@RequestMapping(value = "/user/create", method = RequestMethod.GET)
-	public ModelAndView getUserCreatePage() {
-		LOGGER.debug("Getting user create form");
-		return new ModelAndView("user_create", "form", new UserCreateForm());
-	}
-
-	//@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/user/create", method = RequestMethod.POST)
 	public String handleUserCreateForm(@Valid @ModelAttribute("form") UserCreateForm form,
 			BindingResult bindingResult) {
