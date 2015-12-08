@@ -14,7 +14,7 @@ public class TextController {
 	@Autowired
 	private TextEditor texteditor;
 
-	@RequestMapping("editor.html/save")
+	@RequestMapping("editor.html")
 	public void optionMenu(@RequestParam(value = "code") String Code, @RequestParam(value = "file") String file,
 			@RequestParam(value = "name") String fileName) {
 		texteditor.optionMenu(Code, file, fileName);

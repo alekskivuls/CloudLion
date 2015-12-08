@@ -35,7 +35,7 @@ public class TextEditor {
 		String myCode = Code;
 		String fileTitle = name;
 		try {
-			PrintWriter writer = new PrintWriter(fileTitle + ".txt");
+			PrintWriter writer = new PrintWriter(".\\" + fileTitle);
 			writer.write(myCode);
 			writer.close();
 		} catch (FileNotFoundException e) {
