@@ -1,11 +1,12 @@
 package cloudlion.controllers;
 
-import cloudlion.domain.CurrentUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
+
+import cloudlion.database.CurrentUser;
 
 @ControllerAdvice
 public class CurrentUserControllerAdvice {

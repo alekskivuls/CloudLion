@@ -7,8 +7,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import cloudlion.domain.User;
-import cloudlion.domain.UserCreateForm;
+import cloudlion.database.User;
+import cloudlion.database.UserCreateForm;
 import cloudlion.repository.UserRepository;
 
 import java.util.Collection;

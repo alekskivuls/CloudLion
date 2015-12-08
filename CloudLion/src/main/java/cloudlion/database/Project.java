@@ -1,4 +1,4 @@
-package cloudlion.domain;
+package cloudlion.database;
 
 import javax.persistence.*;
 

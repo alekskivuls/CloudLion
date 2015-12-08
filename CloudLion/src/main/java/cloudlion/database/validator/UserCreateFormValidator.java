@@ -1,5 +1,6 @@
-package cloudlion.domain.validator;
+package cloudlion.database.validator;
 
+import cloudlion.database.UserCreateForm;
 import cloudlion.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-
-import cloudlion.domain.UserCreateForm;
 
 @Component
 public class UserCreateFormValidator implements Validator {

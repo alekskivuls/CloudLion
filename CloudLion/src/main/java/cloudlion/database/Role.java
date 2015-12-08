@@ -1,4 +1,4 @@
-package cloudlion.domain;
+package cloudlion.database;
 
 public enum Role {
 

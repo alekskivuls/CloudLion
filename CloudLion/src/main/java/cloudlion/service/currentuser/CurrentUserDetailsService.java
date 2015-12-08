@@ -1,5 +1,7 @@
 package cloudlion.service.currentuser;
 
+import cloudlion.database.CurrentUser;
+import cloudlion.database.User;
 import cloudlion.service.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,9 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import cloudlion.domain.CurrentUser;
-import cloudlion.domain.User;
 
 @Service
 public class CurrentUserDetailsService implements UserDetailsService {

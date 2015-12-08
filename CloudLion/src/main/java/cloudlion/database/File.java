@@ -1,4 +1,4 @@
-package cloudlion.domain;
+package cloudlion.database;
 
 import javax.persistence.*;
 
@@ -13,7 +13,7 @@ public class File {
 	
 	@ManyToOne
     @JoinColumn(name = "project_id", nullable = false, updatable = false)
-    private Project project;
+	private Project project;
 	
     @Column(name = "file_name", nullable = false, unique = true)
     private String fileName;

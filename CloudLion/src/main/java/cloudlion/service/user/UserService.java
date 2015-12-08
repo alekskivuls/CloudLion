@@ -3,8 +3,8 @@ package cloudlion.service.user;
 import java.util.Collection;
 import java.util.Optional;
 
-import cloudlion.domain.User;
-import cloudlion.domain.UserCreateForm;
+import cloudlion.database.User;
+import cloudlion.database.UserCreateForm;
 
 public interface UserService {
 

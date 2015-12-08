@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import cloudlion.domain.CurrentUser;
-import cloudlion.domain.Role;
+import cloudlion.database.CurrentUser;
+import cloudlion.database.Role;
 
 @Service
 public class CurrentUserServiceImpl implements CurrentUserService {
