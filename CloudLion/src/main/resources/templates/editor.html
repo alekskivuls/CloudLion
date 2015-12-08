@@ -25,17 +25,22 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="index">Home</a></li>
 					<li><a href="editor">Editor</a></li>
-					<li><a href="setting">Settings</a></li>
+				    <li><a href="#" data-toggle="modal" data-target="#myModal">Settings</a></li>
 					<li><a href="logout">Log Out</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-
-
-<div class="row" id="main">
-		<div class="col-md-2 col-xs-2 sidebar" id="option">
-			<div>
+	
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Settings</h4>
+        </div>
+        <div class="modal-body">
+          	<div>
 				<h3>Pick a Theme</h3>
 				<select id="theme" onchange="setTheme()">
 				</select>
@@ -55,6 +60,18 @@
 				<select id="file" onchange="setFile()">
 				</select>
 			</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+<div class="row" id="main">
+		<div class="col-md-2 col-xs-2 sidebar" id="option">
 			<div>
 			<form action="">
 			<h3>Select a file to load: </h3><br></br>
