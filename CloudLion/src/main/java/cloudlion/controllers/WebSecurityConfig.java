@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -23,7 +24,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 //.antMatchers("/", "/public/**").permitAll()
-                .antMatchers("/", "/home", "/signup", "/css/**", "/js/**", "/html/**", "/img/**", "/webjars/**").permitAll()
+                .antMatchers("/", "/home", "/signup", "/css/**", "/js/**", "/html/**", "/img/**", "/webjars/**", "/user/**").permitAll()
                 .antMatchers("/users/**").hasAuthority("ADMIN")
                 .anyRequest().fullyAuthenticated()
                 .and()
@@ -34,12 +35,15 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .logoutUrl("/logout")
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                //.logoutUrl("/logout")
                 .deleteCookies("remember-me")
                 .logoutSuccessUrl("/")
                 .permitAll()
                 .and()
-                .rememberMe();
+                .rememberMe()
+                .and()
+                .csrf().disable();
     }
 
     @Override

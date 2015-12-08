@@ -1,6 +1,6 @@
 package cloudlion.service.currentuser;
 
-import cloudlion.domain.CurrentUser;
+import cloudlion.database.CurrentUser;
 
 public interface CurrentUserService {
 

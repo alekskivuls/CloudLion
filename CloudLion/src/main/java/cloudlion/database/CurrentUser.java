@@ -1,4 +1,4 @@
-package cloudlion.domain;
+package cloudlion.database;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 

@@ -2,7 +2,7 @@ package cloudlion.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import cloudlion.domain.User;
+import cloudlion.database.User;
 
 import java.util.Optional;
 

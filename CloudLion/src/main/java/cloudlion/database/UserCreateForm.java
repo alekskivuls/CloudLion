@@ -1,4 +1,4 @@
-package cloudlion.domain;
+package cloudlion.database;
 
 import org.hibernate.validator.constraints.NotEmpty;
 

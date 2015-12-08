@@ -21,8 +21,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<spring-webmvc-pac4j.version>1.0.1-SNAPSHOT</spring-webmvc-pac4j.version>
-        <pac4j.version>1.8.1-SNAPSHOT</pac4j.version>
 	</properties>
 
 	<dependencies>
@@ -55,10 +53,6 @@
 			<version>2.1.4</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>angularjs</artifactId>
 			<version>1.4.7</version>
@@ -72,24 +66,9 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-		  <dependency>
-            <groupId>org.pac4j</groupId>
-            <artifactId>spring-webmvc-pac4j</artifactId>
-            <version>${spring-webmvc-pac4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.pac4j</groupId>
-            <artifactId>pac4j-oauth</artifactId>
-            <version>${pac4j.version}</version>
-        </dependency>
-         <dependency>
-            <groupId>org.pac4j</groupId>
-            <artifactId>pac4j-http</artifactId>
-            <version>${pac4j.version}</version>
-        </dependency>
 	</dependencies>
 
 	<build>

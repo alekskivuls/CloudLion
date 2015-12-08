@@ -2,7 +2,14 @@
 	margin: 0;
 	overflow: hidden;
 }
-
+.glyphicon.glyphicon-plus {
+    font-size: 5px;
+	padding-bottom: 3px;
+	padding-right: 5px;
+}
+p {
+	padding-left: 35px;
+}
 body {
 	background-image: url(../img/ptrbackground.jpg);
 	margin-top: 0;
@@ -47,7 +54,6 @@ nav {
 	left:0;
 	right: 0;
 }
-
 .sidebar {
 	position: fixed;
 	bottom: 0;
@@ -83,14 +89,6 @@ nav {
 
 #option h3 {
 	font-size: 1.2em;
-}
-
-#button {
-	float: left;
-}
-
-#button div {
-	padding: 10px;
 }
 
 label {
