@@ -11,9 +11,9 @@ public class File {
 	@Column(name = "file_id", nullable = false, updatable = false)
 	private Long id;
 	
-	@ManyToOne
-    @JoinColumn(name = "project_id", nullable = false, updatable = false)
-	private Project project;
+	//@ManyToOne
+    //@JoinColumn(name = "project_id", nullable = false, updatable = false)
+	//private Project project;
 	
     @Column(name = "file_name", nullable = false, unique = true)
     private String fileName;
@@ -45,7 +45,7 @@ public class File {
     public String toString() {
         return "File{" +
         		"id=" + id +
-                "projectId=" + project.getId() +
+                "text=" + text +
                 '}';
     }
 }

@@ -28,7 +28,12 @@
 		 <div id="signup" class="container">
 		 <h3>Create your personal account</h3>
 		 <br/>
-	 		<form th:action="@{/user/create}" method="post" id="signup" class="form-horizontal" role="form">
+	 	 <style>
+  .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+</style>
+
+<iframe name="hiddenFrame" class="hide"></iframe>
+	 	 <form th:action="@{/file/create}" method="post" id="signup" class="form-horizontal" role="form" target="hiddenFrame">
 	 		<!--  
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="user">Username:</label>
@@ -40,19 +45,13 @@
 	 	   <div class="form-group">
 	 	     <label class="control-label col-sm-2" for="email">Email:</label>
 	 	     <div class="col-sm-10">
-	 	       <input type="email" class="form-control" name="email" id="email" placeholder="Enter email"></input>
+	 	       <input type="text" class="form-control" name="fileName" id="fileName" placeholder="Enter name"></input>
 	 	     </div>
 	 	   </div>
 	 	   <div class="form-group">
 	 	     <label class="control-label col-sm-2" for="password">Password:</label>
 	 	     <div class="col-sm-10">
-	 	       <input type="password" class="form-control" name="password" id="password" placeholder="Enter password"></input>
-	 	     </div>
-	 	   </div>
-	 	   <div class="form-group">
-	 	     <label class="control-label col-sm-2" for="passwordRepeated">Password:</label>
-	 	     <div class="col-sm-10">
-	 	       <input type="password" class="form-control" name="passwordRepeated" id="passwordRepeated" placeholder="Enter password again"></input>
+	 	       <input type="text" class="form-control" name="text" id="text" placeholder="Enter text"></input>
 	 	     </div>
 	 	   </div>
 	 	   <div class="form-group">
@@ -61,6 +60,7 @@
 	 	     </div>
 	 	   </div>
 	 	 </form>
+	 	 <!-- TEST -->
 	</div>
 	</div>
 <script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
