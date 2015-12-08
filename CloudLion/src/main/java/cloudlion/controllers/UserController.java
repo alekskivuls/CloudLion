@@ -50,7 +50,7 @@ public class UserController {
 		return new ModelAndView("user_create", "form", new UserCreateForm());
 	}
 
-	@PreAuthorize("hasAuthority('ADMIN')")
+	//@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/user/create", method = RequestMethod.POST)
 	public String handleUserCreateForm(@Valid @ModelAttribute("form") UserCreateForm form,
 			BindingResult bindingResult) {
