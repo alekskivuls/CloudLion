@@ -1,17 +1,7 @@
 package cloudlion.texteditor;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
-
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 import org.springframework.stereotype.Service;
 
@@ -35,7 +25,7 @@ public class TextEditor {
 		String myCode = Code;
 		String fileTitle = name;
 		try {
-			PrintWriter writer = new PrintWriter(fileTitle + ".txt");
+			PrintWriter writer = new PrintWriter(".\\" + fileTitle);
 			writer.write(myCode);
 			writer.close();
 		} catch (FileNotFoundException e) {
