@@ -6,7 +6,8 @@
 <link rel="stylesheet" type="text/css" href="css/cloudlion.css" />
 <link rel="icon" href="lion.png" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="css/terminal.css" />
-<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
 <script src="webjars/jquery/2.1.4/jquery.min.js"></script>
 <script src="webjars/angularjs/1.4.7/angular.js"></script>
 
@@ -25,22 +26,22 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="index">Home</a></li>
 					<li><a href="editor">Editor</a></li>
-				    <li><a href="#" data-toggle="modal" data-target="#myModal">Settings</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#myModal">Settings</a></li>
 					<li><a href="logout">Log Out</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Settings</h4>
-        </div>
-        <div class="modal-body">
-          	<div>
+
+
+	<!-- Modal content-->
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Settings</h4>
+		</div>
+		<div class="modal-body">
+			<div>
 				<h3>Pick a Theme</h3>
 				<select id="theme" onchange="setTheme()">
 				</select>
@@ -60,46 +61,43 @@
 				<select id="file" onchange="setFile()">
 				</select>
 			</div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	</div>
 
 
-<div class="row" id="main">
+	<div class="row" id="main">
 		<div class="col-md-2 col-xs-2 sidebar" id="option">
 			<div>
-			<form action="">
-			<h3>Select a file to load: </h3><br></br>
-			<input type="file" name="files" id="fileElem" />
-			</form>
-		</div>
-			<div>
-			<button type="button" onclick="compileCode()">Compile</button>
-		</div>
-			<div>
-				<h3>Files </h3>
-				<button type="button" onclick="addFolder()">Add Folder</button>
-				<div id="folders">
-				</div>
+				<form action="">
+					<h3>Select a file to load:</h3>
+					<br></br> <input type="file" name="files" id="fileElem" />
+				</form>
 			</div>
-			
+			<div>
+				<button type="button" onclick="compileCode()">Compile</button>
+			</div>
+			<div>
+				<h3>Files</h3>
+				<button type="button" onclick="addFolder()">Add Folder</button>
+				<div id="folders"></div>
+			</div>
+
 		</div>
 		<div class="col-md-10 col-xs-10" id="rightCol">
 			<div class="row" id="editor">
-			<div id="textContent">******Make a new folder. This will not be saved.******</div>
+				<div id="textContent">******Make a new folder. This will not
+					be saved.******</div>
 			</div>
 			<div class="row" id="terminal">
-			<div ng-app="execute" ng-controller="console">
-				<terminal terminal-class="black">
-				<p class="click-me">Click me to start commanding !</p>
-				</terminal>
+				<div ng-app="execute" ng-controller="console">
+					<terminal terminal-class="black">
+					<p class="click-me">Click me to start commanding !</p>
+					</terminal>
+				</div>
 			</div>
-		</div>
 		</div>
 	</div>
 
