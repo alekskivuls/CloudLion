@@ -19,11 +19,6 @@ function onFileChanged(theEvt) {
 	var thefile = theEvt.target.files[0];
 	var totalBytes = 0;
 
-	if (thefile.type != "text/plain") {
-		alert("Invaild file");
-		//document.getElementById('filecontents').innerHTML = "No text file chosen";
-		return;
-	}
 	var reader = new FileReader();
 	reader.onload = function(evt) {
 		editor = ace.edit("editor");
